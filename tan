@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alex Studio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      color: #1a1a1a;
+      background: #ffffff;
+    }
+
+    /* ── NAVIGATION ── */
+    nav {
+      background: #1D9E75;
+      padding: 14px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    /* ── HERO SECTION ── */
+    .hero {
+      background: #0F6E56;
+      padding: 80px 32px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      color: #ffffff;
+      font-size: 42px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 18px;
+      max-width: 500px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+
+    .hero-btn {
+      background: #ffffff;
+      color: #0F6E56;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .hero-btn:hover {
+      background: #e6f5f0;
+    }
+
+    /* ── SERVICES SECTION ── */
+    .services {
+      padding: 60px 32px;
+      background: #f9f9f9;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+
+    .section-sub {
+      font-size: 15px;
+      color: #666666;
+      margin-bottom: 36px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 24px 20px;
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #666666;
+      line-height: 1.6;
+    }
+
+    /* ── ABOUT SECTION ── */
+    .about {
+      background: #ffffff;
+      padding: 60px 32px;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .about-avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: #1D9E75;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .about-text h2 {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      color: #1a1a1a;
+    }
+
+    .about-text p {
+      font-size: 15px;
+      color: #555555;
+      line-height: 1.7;
+      max-width: 500px;
+    }
+
+    /* ── CONTACT SECTION ── */
+    .contact {
+      background: #f9f9f9;
+      padding: 60px 32px;
+    }
+
+    .contact-box {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 32px;
+      max-width: 500px;
+    }
+
+    .field {
+      margin-bottom: 20px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 13px;
+      color: #555555;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid #cccccc;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #1a1a1a;
+      font-family: Georgia, serif;
+      background: #ffffff;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: #1D9E75;
+    }
+
+    .field textarea {
+      height: 100px;
+      resize: none;
+    }
+
+    .send-btn {
+      background: #1D9E75;
+      color: #ffffff;
+      border: none;
+      padding: 13px 28px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .send-btn:hover {
+      background: #0F6E56;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #085041;
+      padding: 28px 32px;
+      text-align: center;
+    }
+
+    footer p {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <span class="nav-logo">Alex Studio</span>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Work</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>I design things people love</h1>
+    <p>Freelance designer & developer based in Amsterdam. Building beautiful websites for small businesses.</p>
+    <button class="hero-btn">See my work</button>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <p class="section-title">What I do</p>
+    <p class="section-sub">Services I offer to clients</p>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-icon" style="background: #E1F5EE;">🖥️</div>
+        <h3>Web design</h3>
+        <p>Clean, modern layouts that look great on any screen size.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon" style="background: #EEEDFE;">💻</div>
+        <h3>Development</h3>
+        <p>Turning designs into real websites using HTML, CSS, and JS.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon" style="background: #FAEEDA;">⚡</div>
+        <h3>Fast delivery</h3>
+        <p>Most projects shipped within 1–2 weeks, no long waits.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon" style="background: #FCEBEB;">🛡️</div>
+        <h3>Reliable support</h3>
+        <p>Available after launch to fix issues and make updates.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="about-avatar">A</div>
+    <div class="about-text">
+      <h2>Hey, I'm Alex</h2>
+      <p>I've been building websites for 5 years, helping small businesses get online and look professional. I believe good design doesn't have to be complicated or expensive.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <p class="section-title">Get in touch</p>
+    <p class="section-sub">Have a project? Let's talk.</p>
+    <div class="contact-box">
+      <div class="field">
+        <label>Your name</label>
+        <input type="text" placeholder="Jordan Smith" />
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" placeholder="jordan@email.com" />
+      </div>
+      <div class="field">
+        <label>Message</label>
+        <textarea placeholder="Tell me about your project..."></textarea>
+      </div>
+      <button class="send-btn">Send message</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Alex Studio — Built with HTML & CSS only</p>
+  </footer>
+
+</body>
+</html>
